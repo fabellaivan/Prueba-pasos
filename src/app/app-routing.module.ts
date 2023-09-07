@@ -1,11 +1,10 @@
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { EjercicioComponent } from './ejercicio/ejercicio.component';
 import { LoginComponent } from './login/login.component';
 
 const route: Routes =[
-
   {
     path: "",redirectTo: "/Ejercicio",pathMatch: "full",
     //Al ser ruta de direccion siempre debe llevar pathMatch
@@ -23,14 +22,16 @@ const route: Routes =[
         component: EjercicioComponent,
       }
     ]
+  },
+  {
+    path: "**",
+  //  component:NotFoundComponent
   }
 
 ]
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(route)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
