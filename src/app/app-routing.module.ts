@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
   {
-    path: "",redirectTo: "/Ejercicio",pathMatch: "full",
+    path: "",redirectTo: "Ejercicio",pathMatch: "full",
     //Al ser ruta de direccion siempre debe llevar pathMatch
   },
   {
