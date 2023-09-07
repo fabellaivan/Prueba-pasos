@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private router: Router){}
 
   navigate(){
-    this.router.navigateByUrl("/Ejercicio");
+    this.router.navigateByUrl("/primero");
     this.router.navigate([""]);
   }
 }
