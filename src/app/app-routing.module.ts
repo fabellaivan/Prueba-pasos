@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EjercicioComponent } from './ejercicio/ejercicio.component';
 import { LoginComponent } from './login/login.component';
 
-const route: Routes =[
+const routes: Routes =[
   {
     path: "",redirectTo: "/Ejercicio",pathMatch: "full",
     //Al ser ruta de direccion siempre debe llevar pathMatch
@@ -31,7 +31,7 @@ const route: Routes =[
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(route)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
