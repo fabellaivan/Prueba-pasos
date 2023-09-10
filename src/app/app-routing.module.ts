@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { EjercicioComponent } from './ejercicio/ejercicio.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrerComponent } from './registrer/registrer.component';
 
 const routes: Routes =[
   {
@@ -12,6 +13,10 @@ const routes: Routes =[
   {
     path: "primero",
     component: EjercicioComponent,
+  },
+  {
+    path: "Registro",
+    component: RegistrerComponent,
   },
   {
     path: "Login",

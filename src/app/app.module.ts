@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { RegistrerComponent } from './registrer/registrer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     BienvenidoComponent,
     LoginComponent,
     ErrorComponent,
-    EjercicioComponent
+    EjercicioComponent,
+    RegistrerComponent
   ],
   imports: [
     BrowserModule,
