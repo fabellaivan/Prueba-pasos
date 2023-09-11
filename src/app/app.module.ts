@@ -12,6 +12,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { RegistrerComponent } from './registrer/registrer.component';
+import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegistrerComponent } from './registrer/registrer.component';
     LoginComponent,
     ErrorComponent,
     EjercicioComponent,
-    RegistrerComponent
+    RegistrerComponent,
+    QuienSoyComponent
 
   ],
   imports: [
