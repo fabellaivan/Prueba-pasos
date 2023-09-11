@@ -11,7 +11,7 @@ const routes: Routes =[
     //Al ser ruta de direccion siempre debe llevar pathMatch
   },
   {
-    path: "primero",
+    path: "Ejercicio",
     component: EjercicioComponent,
   },
   {
@@ -21,17 +21,17 @@ const routes: Routes =[
   {
     path: "Login",
     component: LoginComponent,
-    children:[
-      {
-        path: "Ejercicio",
-        component: EjercicioComponent,
-      }
-    ]
-  },
-  {
-    path: "**",
-  //  component:NotFoundComponent
-  }
+    // children:[
+    //   {
+    //     path: "Ejercicio",
+    //     component: EjercicioComponent,
+    //   }
+    // ]
+   },
+  //  {
+  //    path: "**",
+  // // component:NotFoundComponent
+  //  }
 
 ]
 
