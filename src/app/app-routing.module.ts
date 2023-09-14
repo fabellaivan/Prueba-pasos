@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { EjercicioComponent } from './ejercicio/ejercicio.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrerComponent } from './registrer/registrer.component';
+import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 
 const routes: Routes =[
   {
-    path: "",redirectTo: "Login",pathMatch: "full",
+    path: "",redirectTo: "QuienSoy",pathMatch: "full",
     //Al ser ruta de direccion siempre debe llevar pathMatch
   },
   {
@@ -22,6 +23,10 @@ const routes: Routes =[
     path: "Login",
     component: LoginComponent,
    },
+   {
+    path:"QuienSoy",
+    component: QuienSoyComponent
+   }
   //  {
   //    path: "**",
   // // component:NotFoundComponent
