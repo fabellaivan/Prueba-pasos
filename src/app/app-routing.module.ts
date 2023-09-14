@@ -7,7 +7,7 @@ import { RegistrerComponent } from './registrer/registrer.component';
 
 const routes: Routes =[
   {
-    path: "",redirectTo: "",pathMatch: "full",
+    path: "",redirectTo: "Login",pathMatch: "full",
     //Al ser ruta de direccion siempre debe llevar pathMatch
   },
   {
@@ -21,12 +21,6 @@ const routes: Routes =[
   {
     path: "Login",
     component: LoginComponent,
-    // children:[
-    //   {
-    //     path: "Ejercicio",
-    //     component: EjercicioComponent,
-    //   }
-    // ]
    },
   //  {
   //    path: "**",
