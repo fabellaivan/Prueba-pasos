@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quien-soy',
@@ -7,8 +8,9 @@ import { Component } from '@angular/core';
 })
 export class QuienSoyComponent {
 
+  constructor(private router: Router) {}
   onSubmit() {
-
+    this.router.navigate(['/Login']);
 
   }
 }
