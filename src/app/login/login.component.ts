@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent {
   constructor(private router: Router) {}
   onSubmit() {
@@ -17,10 +18,10 @@ export class LoginComponent {
       this.router.navigate(['/Registro']);
     }
   }
+
   private getClickedButtonName(): string {
     const loginButton = document.querySelector('button[name="login"]');
     const registroButton = document.querySelector('button[name="registro"]');
-
     if (loginButton === document.activeElement) {
       return 'login';
     } else if (registroButton === document.activeElement) {

@@ -21,7 +21,8 @@ const routes: Routes =[
   },
   {
     path: "Login",
-    component: LoginComponent,
+    loadChildren: () => import('./login/login.module.module')
+    .then(mod => mod.LoginModuleModule)
    },
    {
     path:"QuienSoy",
