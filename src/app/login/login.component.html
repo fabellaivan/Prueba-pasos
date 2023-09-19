@@ -10,10 +10,11 @@
 
       <div class="col-lg-12 login-form">
         <div class="col-lg-12 login-form">
-          <form (ngSubmit)="onSubmit()">
+          <form >
+
             <div class="form-group">
               <label class="form-control-label">USERNAME</label>
-              <input type="text" class="form-control" formControlName="email" />
+              <input type="text"  class="form-control" name="username" formControlName="email"  />
             </div>
             <div class="form-group">
               <label class="form-control-label">PASSWORD</label>
@@ -21,28 +22,40 @@
                 type="password"
                 class="form-control"
                 formControlName="password"
+                name="password"
+
               />
             </div>
-
             <div class="col-lg-12 loginbttm">
               <div class="col-lg-6 login-btm login-text">
                 <!-- Error Message -->
               </div>
               <div class="col-lg-6 login-btm login-button">
                 <button
-                  type="submit"
+                  type="button"
                   class="btn btn-outline-primary"
                   name="login"
+                  (click)="onSubmit()"
                 >
                   LOGIN
                 </button>
                 <button
-                  type="submit"
+                  type="button"
                   class="btn btn-outline-primary"
                   name="registro"
+                  (click)="onSubmit()"
                 >
                   Registro
                 </button>
+                <button
+                type="button"
+                class="btn btn-outline-primary"
+                name="Autocompletar"
+                (click)="onSubmit()"
+              >
+                Autocompletar
+              </button>
+
               </div>
             </div>
           </form>
@@ -51,5 +64,6 @@
 
       <div class="col-lg-3 col-md-2"></div>
     </div>
-  </div>
+  <!-- </div>
+  <app-home [email]="this.email"></app-home> -->
 </div>

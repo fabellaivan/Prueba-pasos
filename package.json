@@ -12,7 +12,6 @@
     "delete:docs": "del docs",
     "copy:dist": "copyfiles dist/app-utn/* ./docs -f",
     "copy:distFirebase": "copyfiles dist/app-utn/* ./y -f"
-
   },
   "private": true,
   "dependencies": {
@@ -25,7 +24,7 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
-    "firebase": "^10.3.1",
+    "firebase": "^10.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

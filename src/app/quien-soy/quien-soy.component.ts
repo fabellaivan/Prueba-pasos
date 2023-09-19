@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class QuienSoyComponent {
 
   constructor(private router: Router) {}
+
   onSubmit() {
     this.router.navigate(['/Login']);
 

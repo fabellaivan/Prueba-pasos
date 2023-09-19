@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms'; // Importa FormGroup y FormControl
 
 import { Router } from '@angular/router';
 
