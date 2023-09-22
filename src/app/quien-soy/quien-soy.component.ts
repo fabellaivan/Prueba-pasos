@@ -11,7 +11,7 @@ export class QuienSoyComponent {
   constructor(private router: Router) {}
 
   onSubmit() {
-    this.router.navigate(['/Login']);
+    this.router.navigate(['/Bienvenido']);
 
   }
 }

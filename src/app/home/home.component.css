@@ -1,0 +1,38 @@
+/******headers******/
+.seccion-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  background-image: url("../../assets/doctorStrange.jpeg");
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
+header li {
+  display: inline-block;
+  margin-right: 10px;
+}
+/********Modificadores*********************/
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 10px;
+}
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
