@@ -15,7 +15,7 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
-    this.getUserLogeado();
+    (this.getUserLogeado())
   }
 
   getUserLogeado() {
@@ -23,13 +23,13 @@ export class NavbarComponent {
       if (res?.email) {
         return (this.usuario = res.email);
       } else {
-        return 'No se encontro usuario logeado.';
+        return this.router.navigate(['/'])
       }
     });
   }
   async logOut(){
     this.usrService.logOut().then(() => {
-      this.router.navigate(['/QuienSoy'])
+      this.router.navigate(['/'])
     }).catch(err => {
       console.log(err);
     });

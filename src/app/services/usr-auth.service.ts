@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import{AngularFireAuth} from '@angular/fire/compat/auth';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 @Injectable({
   providedIn: 'root',
 })
-
 export class UsrAuthService {
-  /** */
-  constructor(private afauth: AngularFireAuth) { }
+
+  constructor(
+    private afauth: AngularFireAuth,
+    private db: AngularFireDatabase
+  ) {}
 
   async login(email: string, password: string) {
     try {
@@ -18,12 +20,21 @@ export class UsrAuthService {
     }
   }
   async register({ email, password }: any) {
-      try {
-        return await this.afauth.createUserWithEmailAndPassword(email, password);
-        } catch (err) {
-          console.log('error en login: ', err);
-          return null;
-        }
+    try {
+      return await this.afauth.createUserWithEmailAndPassword(email, password);
+    } catch (err) {
+      console.log('error en login: ', err);
+      return null;
+    }
+  }
+
+  async logLogin() {
+    const user = await this.afauth.currentUser;
+    if (user) {
+      const email = user.email;
+      const date = new Date().toISOString();
+      this.db.list(`/logUser`).push({ email, timestamp: date });
+    }
   }
 
   async logOut() {
@@ -38,8 +49,4 @@ export class UsrAuthService {
   getUserLoggedIn() {
     return this.afauth.authState;
   }
-
-
-
-  /** */
 }

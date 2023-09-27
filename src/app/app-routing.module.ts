@@ -1,13 +1,21 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { QuienSoyComponent } from './quien-soy/quien-soy.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'QuienSoy',
     pathMatch: 'full',
+  },
+  {
+    path: 'QuienSoy',
+    loadChildren: () =>
+      import('./quien-soy/quiensoy.module').then((mod) => mod.QuiensoyModule),
+  },
+  {
+    path: 'Ejercicio',
+    loadChildren: () =>
+      import('./ejercicio/ejercicio.module').then((mod) => mod.EjercicioModule),
   },
   {
     path: 'Home',
@@ -18,10 +26,6 @@ const routes: Routes = [
     path: 'Bienvenido',
     loadChildren: () =>
       import('./login/login.module').then((mod) => mod.LoginModule),
-  },
-  {
-    path: 'QuienSoy',
-    component: QuienSoyComponent,
   },
   {
     path: 'Registro',

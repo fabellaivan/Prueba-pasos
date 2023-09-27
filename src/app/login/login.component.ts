@@ -8,49 +8,54 @@ import { UsrAuthService } from '../services/usr-auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
-  constructor(private router: Router,private usrService: UsrAuthService) {}
+  constructor(private router: Router, private usrService: UsrAuthService) {}
 
   logOn = false;
-  public usr:any = {
+  public usr: any = {
     email: '',
-    pass: ''
-
+    pass: '',
   };
 
   onSubmit() {
     const clickedButtonName = this.getClickedButtonName();
 
     if (clickedButtonName === 'login') {
-      this.usrService.login(this.usr.email, this.usr.pass)
-        .then(user => {
-          this.router.navigate(['/Home'])
-          if(!user) {
-            alert("Datos incorrectos, si no tenes cuenta registrate!");
-            return;
-          };
-        }).catch(err=>{
-          console.log(err)
+      this.usrService
+        .login(this.usr.email, this.usr.pass)
+        .then((user) => {
+          if (!user) {
+            alert('Datos incorrectos, si no tenes cuenta registrate!');
+          } else {
+            this.usrService.logLogin();
+            this.router.navigate(['/Home']);
+          }
         })
-    } else if (clickedButtonName === 'autoCompletar'){
-       this.usr.email = "ivan.fabella@hdi.com.ar";
-       this.usr.pass= 'ivanmaxi1';
+        .catch((err) => {
+          console.log(err);
+        });
+    } else if (clickedButtonName === 'autoCompletar') {
+      this.usr.email = 'ivan.fabella@hdi.com.ar';
+      this.usr.pass = 'ivanmaxi1';
     }
   }
 
   private getClickedButtonName(): string {
-    if (document.querySelector('button[name="login"]') === document.activeElement) {
+    if (
+      document.querySelector('button[name="login"]') === document.activeElement
+    ) {
       return 'login';
-    } else if( document.querySelector('button[name="Autocompletar"]') === document.activeElement) {
+    } else if (
+      document.querySelector('button[name="Autocompletar"]') ===
+      document.activeElement
+    ) {
       return 'autoCompletar';
     }
     return 'default';
   }
-  getUserLogeado(){
-    console.log("llega");
-    this.usrService.getUserLoggedIn().subscribe(res =>{
-      console.log(res?.email,"llega");
-    })
+  getUserLogeado() {
+    console.log('llega');
+    this.usrService.getUserLoggedIn().subscribe((res) => {
+      console.log(res?.email, 'llega');
+    });
   }
-
 }
