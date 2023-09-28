@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsrAuthService } from '../services/usr-auth.service';
-
+// import 'animate.css';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,7 +25,12 @@ export class LoginComponent {
         .login(this.usr.email, this.usr.pass)
         .then((user) => {
           if (!user) {
-            alert('Datos incorrectos, si no tenes cuenta registrate!');
+            Swal.fire({
+              title: 'Erraste feo',
+              showClass: {
+                popup: 'Le erraste'
+              }
+            })
           } else {
             this.usrService.logLogin();
             this.router.navigate(['/Home']);
