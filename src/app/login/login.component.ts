@@ -26,9 +26,12 @@ export class LoginComponent {
         .then((user) => {
           if (!user) {
             Swal.fire({
-              title: 'Erraste feo',
+              title: 'Erraste',
               showClass: {
                 popup: 'Le erraste'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
               }
             })
           } else {
@@ -40,8 +43,8 @@ export class LoginComponent {
           console.log(err);
         });
     } else if (clickedButtonName === 'autoCompletar') {
-      this.usr.email = 'ivan.fabella@hdi.com.ar';
-      this.usr.pass = 'ivanmaxi1';
+      this.usr.email = 'ivan@fabella.com';
+      this.usr.pass = 'password';
     }
   }
 
