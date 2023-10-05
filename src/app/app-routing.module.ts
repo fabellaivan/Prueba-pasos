@@ -1,5 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatComponent } from './components/chat/chat.component';
+
 
 const routes: Routes = [
   {
@@ -10,28 +12,37 @@ const routes: Routes = [
   {
     path: 'QuienSoy',
     loadChildren: () =>
-      import('./quien-soy/quiensoy.module').then((mod) => mod.QuiensoyModule),
+      import('./components/quien-soy/quiensoy.module').then((mod) => mod.QuiensoyModule),
   },
   {
     path: 'Ejercicio',
     loadChildren: () =>
-      import('./ejercicio/ejercicio.module').then((mod) => mod.EjercicioModule),
+      import('./components/ejercicio/ejercicio.module').then((mod) => mod.EjercicioModule),
   },
   {
     path: 'Home',
     loadChildren: () =>
-      import('./home/home.module').then((mod) => mod.HomeModule),
+      import('./components/home/home.module').then((mod) => mod.HomeModule),
   },
   {
     path: 'Bienvenido',
     loadChildren: () =>
-      import('./login/login.module').then((mod) => mod.LoginModule),
+      import('./components/login/login.module').then((mod) => mod.LoginModule),
   },
   {
     path: 'Registro',
     loadChildren: () =>
-      import('./registrer/registrer.module').then((mod) => mod.RegistrerModule),
+      import('./components/registrer/registrer.module').then((mod) => mod.RegistrerModule),
   },
+  {
+    path: 'Chat',
+      component: ChatComponent,
+  },
+  {
+    path: 'Memoria',
+    loadChildren: () =>
+      import('./components/Juegos/memory-time/memory-time.module').then((mod) => mod.MemoryTimeModule),
+  }
   //  {
   //    path: "**",
   // // component:NotFoundComponent

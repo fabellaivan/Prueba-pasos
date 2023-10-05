@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+
+// import { Firestore,addDoc, collection, getDoc, getDocs, updateDoc } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root',
 })
@@ -8,7 +10,8 @@ export class UsrAuthService {
 
   constructor(
     private afauth: AngularFireAuth,
-    private db: AngularFireDatabase
+    private db: AngularFireDatabase,
+    // private firestore : Firestore
   ) {}
 
   async login(email: string, password: string) {

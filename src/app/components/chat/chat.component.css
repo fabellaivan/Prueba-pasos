@@ -1,0 +1,59 @@
+.cardContainer{
+  width: 300px;
+  height: 500px;
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+}
+.card-body{
+  padding: 0.5rem;
+}
+.card-header{
+  background-color: green;
+  color:black;
+  font-weight: 700;
+}
+.container-Msg {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0.3rem;
+}
+
+.imgEnv:active{
+  transform: scale(0,9);
+}
+.imgEnv.small {
+  width: 30px;
+  height: 30px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.containerMsg{
+  overflow: scroll;
+  padding:0.3rm;
+}
+.send{
+  display: block;
+  background-color : green;
+  color: black;
+  min-width: 50.0%;
+  border-radius: 30px;
+  padding: 5px 10px;
+  text-align: left;
+}
+.recept{
+  display: block;
+  background-color : red;
+  color: black;
+  min-width: 50.0%;
+  border-radius: 30px;
+  padding: 5px 10px;
+  text-align: left;
+}
+
