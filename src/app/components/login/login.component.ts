@@ -38,7 +38,7 @@ export class LoginComponent {
             })
           } else {
             this.usrService.logLogin();
-            this.router.navigate(['/Memoria']);
+            this.router.navigate(['/Home']);
           }
         })
         .catch((err) => {
