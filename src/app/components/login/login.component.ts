@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-
-// import 'animate.css';
+//import 'animate.css';
 import Swal from 'sweetalert2';
 import { UsrAuthService } from '../../services/usr-auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,12 +30,12 @@ export class LoginComponent {
             Swal.fire({
               title: 'Erraste',
               showClass: {
-                popup: 'Le erraste'
+                popup: 'Le erraste',
               },
               hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
-              }
-            })
+                popup: 'animate__animated animate__fadeOutUp',
+              },
+            });
           } else {
             this.usrService.logLogin();
             this.router.navigate(['/Home']);
@@ -63,10 +63,12 @@ export class LoginComponent {
     }
     return 'default';
   }
+
   getUserLogeado() {
     console.log('llega');
     this.usrService.getUserLoggedIn().subscribe((res) => {
       console.log(res?.email, 'llega');
     });
   }
+
 }

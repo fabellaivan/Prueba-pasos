@@ -1,0 +1,16 @@
+<div>
+  <button (click)="crearNuevoMazo()">Crear Nuevo Mazo</button>
+  <button (click)="barajarMazo()">Barajar Cartas</button>
+  <button (click)="extraerCarta()">Extraer Carta</button>
+</div>
+
+<div *ngIf="cartas.length > 0">
+  <h2>Carta Extraída:</h2>
+  <ul>
+
+    <li *ngFor="let carta of cartas">
+      <img [src]="carta.image" alt="{{ carta.code }}">
+    </li>
+
+  </ul>
+</div>

@@ -32,15 +32,7 @@ export class NavbarComponent implements OnDestroy{
       this.userSubscription.unsubscribe();
     }
   }
-  // getUserLogeado() {
-  //   this.usrService.getUserLoggedIn().subscribe((res) => {
-  //     if (res?.email) {
-  //       return (this.usuario = res.email);
-  //     } else {
-  //       return this.router.navigate(['/'])
-  //     }
-  //   });
-  // }
+
   async getUserLogeado() {
     try {
       const res = await this.usrService.getUserLoggedIn().toPromise();

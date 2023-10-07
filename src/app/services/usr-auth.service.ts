@@ -33,7 +33,7 @@ export class UsrAuthService {
 
   async logLogin() {
     const user = await this.afauth.currentUser;
-    if (user) {
+    if (user != null) {
       const email = user.email;
       const date = new Date().toISOString();
       this.db.list(`/logUser`).push({ email, timestamp: date });

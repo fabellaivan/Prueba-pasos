@@ -1,29 +1,26 @@
 import { Component } from '@angular/core';
+import { CartasService } from 'src/app/services/cartas.service';
 
 @Component({
-  selector: 'app-memory-time',
+  selector: 'app-memorytime',
   templateUrl: './memory-time.component.html',
   styleUrls: ['./memory-time.component.css']
 })
 export class MemoryTimeComponent {
 
-  numeroSecreto: number;
-  intentos: number = 0;
-  mensaje: string = '';
-  numeroIngresado: number = 0;
-  constructor() {
-    this.numeroSecreto = Math.floor(Math.random() * 100) + 1;
+
+  constructor(private carta: CartasService) {
+
   }
 
-  verificarNumero(numero: number): void {
-    this.intentos++;
+  ngOnInit(): void {
+    this.carta.todos().subscribe(
+      cartas=>{
+        console.log(cartas);
 
-    if (numero === this.numeroSecreto) {
-      this.mensaje = `¡Felicidades! Has adivinado el número en ${this.intentos} intentos.`;
-    } else if (numero < this.numeroSecreto) {
-      this.mensaje = 'El número secreto es mayor. Intenta nuevamente.';
-    } else {
-      this.mensaje = 'El número secreto es menor. Intenta nuevamente.';
-    }
+      }
+    )
   }
+
+
 }

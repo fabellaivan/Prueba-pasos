@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,4 +9,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private router: Router){}
+  onSubmit() {
+    const clickedButtonName = "memo";
+    if (clickedButtonName === 'memo') {
+    console.log("llega");
+    }
+      //this.router.navigate(['/Memoria']);
+
+  }
 }

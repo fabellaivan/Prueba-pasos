@@ -1,7 +1,5 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChatComponent } from './components/chat/chat.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -40,15 +38,10 @@ const routes: Routes = [
       import('./components/chat/chat.module').then((mod) => mod.ChatModule)
   },
   {
-    path: 'Memoria',
-      loadChildren: () =>
-      import('./components/Juegos/memory-time/memory-time.module').then((mod) => mod.MemoryTimeModule),
-  },
-  {
     path: 'PPT',
       loadChildren: () =>
       import('./components/Juegos/piedra-papel-tijera/piedra-papel-tijera.module').then((mod) => mod.PiedraPapelTijeraModule),
-  },
+  }
   //  {
   //    path: "**",
   // // component:NotFoundComponent

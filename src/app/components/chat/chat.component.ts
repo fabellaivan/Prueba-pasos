@@ -46,7 +46,9 @@ export class ChatComponent implements OnInit {
     let mensaje = {
       emisor : this.userLogeado.uid,
       texto : this.newMsj
+
     }
+    console.log(this.userLogeado);
     this.chats.push(mensaje);
     this.newMsj = "";
   }
