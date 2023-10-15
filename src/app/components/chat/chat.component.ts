@@ -21,7 +21,7 @@ export class ChatComponent implements OnInit {
       texto: "Hola 2"
     }
   ];
-  constructor( private usrService: UsrAuthService) { }
+  constructor( private usrService: UsrAuthService,private msgService: MsgService) { }//Donde injecto al servicio msgService da el  R3InjectorError(HomeModule)
 
   ngOnInit(): void {
     //  this.msgService.getMsg();
