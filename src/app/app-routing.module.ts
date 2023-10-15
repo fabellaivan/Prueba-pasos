@@ -12,11 +12,6 @@ const routes: Routes = [
       import('./components/quien-soy/quiensoy.module').then((mod) => mod.QuiensoyModule),
   },
   {
-    path: 'Ejercicio',
-    loadChildren: () =>
-      import('./components/ejercicio/ejercicio.module').then((mod) => mod.EjercicioModule),
-  },
-  {
     path: 'Home',
     loadChildren: () =>
       import('./components/home/home.module').then((mod) => mod.HomeModule),
@@ -37,11 +32,7 @@ const routes: Routes = [
       loadChildren: () =>
       import('./components/chat/chat.module').then((mod) => mod.ChatModule)
   },
-  {
-    path: 'PPT',
-      loadChildren: () =>
-      import('./components/Juegos/piedra-papel-tijera/piedra-papel-tijera.module').then((mod) => mod.PiedraPapelTijeraModule),
-  }
+  
   //  {
   //    path: "**",
   // // component:NotFoundComponent

@@ -1,10 +1,16 @@
-<div class="card text-center cardContainer" *ngIf="userLogeado">
+<div *ngIf="userLogeado && !viewChat" class="chatIconContainer"(click)="viewChat=true">
+  <img src="https://cdn-icons-png.flaticon.com/512/61/61516.png" class="iconoChat" alt="chat Icon">
+</div>
 
-    <div class="card-header">Chatea!</div>
+<div class="card text-center cardContainer" *ngIf="userLogeado && viewChat">
 
+    <div class="card-header">Chatea!
+      <div class="closeChat"(click)="viewChat=false">x</div>
+    </div>
+ 
     <div class="card-body">
-      <div class="container-Msg h-100">
-        <p *ngFor="let chat of chats" class="send" [ngClass]="userLogeado.uid ? 'enviado' : 'recibido' ">
+      <div id="containerMsg" class="containerMsg">
+        <p *ngFor="let chat of chats" class="send p-2" [ngClass]="userLogeado.uid==chat.emisor ? 'send' : 'recept' ">
           {{chat.texto}}
         </p>
       </div>

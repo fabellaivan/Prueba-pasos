@@ -13,14 +13,14 @@ export class MemoryTimeComponent {
 
   }
 
-  ngOnInit(): void {
-    this.carta.todos().subscribe(
-      cartas=>{
-        console.log(cartas);
+  // ngOnInit(): void {
+  //   this.carta.todos().subscribe(
+  //     cartas=>{
+  //       console.log(cartas);
 
-      }
-    )
-  }
+  //     }
+  //   )
+  // }
 
 
 }

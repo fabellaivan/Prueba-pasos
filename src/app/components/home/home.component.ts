@@ -16,6 +16,7 @@ export class HomeComponent {
     console.log("llega");
     }
       //this.router.navigate(['/Memoria']);
+      
 
   }
 }

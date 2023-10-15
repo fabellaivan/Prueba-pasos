@@ -1,16 +1,11 @@
-<div>
-  <button (click)="crearNuevoMazo()">Crear Nuevo Mazo</button>
-  <button (click)="barajarMazo()">Barajar Cartas</button>
-  <button (click)="extraerCarta()">Extraer Carta</button>
-</div>
-
 <div *ngIf="cartas.length > 0">
-  <h2>Carta Extraída:</h2>
-  <ul>
+  <h2>Carta Actual:</h2>
+  <img [src]="cartas[0]?.image" alt="{{ cartas[0]?.code }}" />
 
-    <li *ngFor="let carta of cartas">
-      <img [src]="carta.image" alt="{{ carta.code }}">
-    </li>
+  <h2>¿La próxima carta será mayor o menor?</h2>
+  <button class="btn btn-outline-primary" (click)="comparar('mayor')">Mayor</button>
+  <button class="btn btn-outline-primary" (click)="comparar('menor')">Menor</button>
 
-  </ul>
+  <h2>Resultado:</h2>
+  <p>{{ resultado }}</p>
 </div>
