@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat/';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
     AngularFireModule,
-    AngularFirestoreModule
+    
 
   ],
 })
