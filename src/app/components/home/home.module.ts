@@ -7,10 +7,13 @@ import { ChatComponent } from '../chat/chat.component';
 import { FormsModule } from '@angular/forms';
 import { JuegosComponent } from '../Juegos/juegos.component';
 import { CartasComponent } from '../Juegos/cartas/cartas.component';
+import { AhorComponent } from '../Juegos/ahorcado/ahor.component';
+import { IngresoPalabraComponent } from '../Juegos/ahorcado/palabras/palabra.component';
+import { AhorcadoComponent } from '../Juegos/ahorcado/ahorcado/ahorcado.component';
 
 
 @NgModule({
-    declarations: [HomeComponent,NavbarComponent,ChatComponent,JuegosComponent,CartasComponent ],
+    declarations: [HomeComponent,NavbarComponent,ChatComponent,JuegosComponent,CartasComponent,AhorComponent,IngresoPalabraComponent,AhorcadoComponent ],
     exports: [],
     imports: [CommonModule, HomeRoutingModule, FormsModule]
 })
