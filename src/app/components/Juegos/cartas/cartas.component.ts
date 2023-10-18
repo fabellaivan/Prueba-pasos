@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartasService } from 'src/app/services/cartas.service';
+import { CartasService } from 'src/app/services/cartas-service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -45,12 +45,11 @@ export class CartasComponent implements OnInit {
     if (this.aComparar != null) {
       if ((opcion === 'mayor' && proximaCarta > this.aComparar) || 
           (opcion === 'menor' && proximaCarta < this.aComparar) || 
-          (opcion === 'igual' && proximaCarta === this.aComparar)) {
-       // this.resultado = '¡Correcto! La carta es ' + opcion + '.'+ " Proxima->"+proximaCarta+ " A comparar->"+ this.aComparar;     
+          (opcion === 'igual' && proximaCarta === this.aComparar)) { 
         Swal.fire({
-          title:  this.resultado = '¡Correcto! La carta es ' + opcion + '.'+ " Proxima->"+proximaCarta+ " A comparar->"+ this.aComparar,
+          title:  this.resultado = '¡Correcto!'  ,
           showClass: {
-            popup: 'Le erraste',
+            popup: 'Bien!',
           },
           hideClass: {
             popup: 'animate__animated animate__fadeOutUp',
@@ -59,7 +58,16 @@ export class CartasComponent implements OnInit {
       
       } else {
         console.log(this.aComparar);
-        this.resultado = 'Incorrecto. La carta es ' + (proximaCarta > this.aComparar ? 'mayor' : 'menor') + '.';        
+        Swal.fire({
+          title:     this.resultado = 'Incorrecto. '  ,
+          showClass: {
+            popup: 'Bien!',
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp',
+          },
+        });
+            
       }
     }
     this.aComparar = proximaCarta; 

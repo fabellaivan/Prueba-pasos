@@ -8,14 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-
+  cartas:boolean | undefined;
   constructor(private router: Router){}
   onSubmit() {
-    const clickedButtonName = "memo";
-    if (clickedButtonName === 'memo') {
-    console.log("llega");
-    }
-      //this.router.navigate(['/Memoria']);
+    
+      this.router.navigate(['Juegos']);
       
 
   }

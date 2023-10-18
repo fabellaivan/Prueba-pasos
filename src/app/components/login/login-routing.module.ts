@@ -4,13 +4,6 @@ import { LoginComponent } from './login.component';
 
 const routes: Routes = [{path: '', component:LoginComponent}];
 
-// const routes: Routes = [
-//   {
-//     path: 'Bienvenido',
-//     loadChildren: () =>
-//       import('./login.module').then((mod) => mod.LoginModule),
-//   },
-// ];
 @NgModule({
   declarations:[],
   imports: [RouterModule.forChild(routes)],

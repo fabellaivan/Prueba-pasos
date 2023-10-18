@@ -1,0 +1,26 @@
+<body>
+  <p>Hola, bienvenido a la página de Juegos.</p>
+   
+<label for="juegosSelector">Selecciona un juego:</label>
+<select id="juegosSelector" [(ngModel)]="juegoSeleccionado">
+  <option value="juego1">Cartas</option>
+  <option value="juego2">Juego 2</option>
+  <option value="juego3">Juego 3</option>
+</select>
+
+<ng-container *ngIf="juegoSeleccionado === 'juego1'">
+  <app-cartas></app-cartas>
+</ng-container>
+<ng-container *ngIf="juegoSeleccionado === 'juego2'">
+  <app-ahor></app-ahor>    
+  <!-- <app-juego2></app-juego2> -->
+</ng-container>
+<ng-container *ngIf="juegoSeleccionado === 'juego3'">
+  <!-- <app-juego3></app-juego3> -->
+</ng-container>
+
+</body>
+
+
+
+ 

@@ -25,6 +25,7 @@ export class UsrAuthService {
   }
   async register({ email, password }: any) {
     try {
+      
       return await this.afauth.createUserWithEmailAndPassword(email, password);
     } catch (err) {
       console.log('error en login: ', err);

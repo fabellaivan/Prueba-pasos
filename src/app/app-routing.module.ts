@@ -27,11 +27,10 @@ const routes: Routes = [
       import('./components/registrer/registrer.module').then((mod) => mod.RegistrerModule),
   },
   {
-    path: 'Chat',
-     // component: ChatComponent,
-      loadChildren: () =>
-      import('./components/chat/chat.module').then((mod) => mod.ChatModule)
-  },
+    path: 'Juegos',
+    loadChildren: () =>
+      import('./components/Juegos/juegos.module').then((mod) => mod.JuegosModule)
+  }
   
   //  {
   //    path: "**",

@@ -8,12 +8,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  title = 'EjemploRutas';
-  constructor(private router: Router){}
-
-  navigate(){
-    this.router.navigateByUrl("/primero");
-    this.router.navigate([""]);
-  }
 }
