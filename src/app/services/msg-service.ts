@@ -22,7 +22,7 @@ export class MsgService {
     return Observable.create((observer: Observer<msg[]>) => {
       const mensajesOrdenados = query(this.msgRef, orderBy('date', 'asc'));
 
-      onSnapshot(mensajesOrdenados, (snapshot) => {
+      this.unsubscribeChat = onSnapshot(mensajesOrdenados, (snapshot) => {
         const mensajes = snapshot.docs.map((doc) => doc.data() as msg);
         observer.next(mensajes);
       });

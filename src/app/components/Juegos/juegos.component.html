@@ -4,8 +4,9 @@
 <label for="juegosSelector">Selecciona un juego:</label>
 <select id="juegosSelector" [(ngModel)]="juegoSeleccionado">
   <option value="juego1">Cartas</option>
-  <option value="juego2">Juego 2</option>
-  <option value="juego3">Juego 3</option>
+  <option value="juego2">Ahorcado</option>
+  <option value="juego3">Preguntados</option>
+  <option value="juego4">Adivina Numero</option>
 </select>
 
 <ng-container *ngIf="juegoSeleccionado === 'juego1'">
@@ -13,12 +14,13 @@
 </ng-container>
 <ng-container *ngIf="juegoSeleccionado === 'juego2'">
   <app-ahor></app-ahor>    
-  <!-- <app-juego2></app-juego2> -->
 </ng-container>
 <ng-container *ngIf="juegoSeleccionado === 'juego3'">
-  <!-- <app-juego3></app-juego3> -->
+  <app-preguntados></app-preguntados>
 </ng-container>
-
+<ng-container *ngIf="juegoSeleccionado === 'juego4'">
+<app-adivinaNumero></app-adivinaNumero>
+</ng-container>
 </body>
 
 

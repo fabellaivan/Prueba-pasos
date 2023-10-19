@@ -13,9 +13,7 @@ export class PalabraService {
 
     this.HttpCLient.get('https://loginutn-dc890-default-rtdb.firebaseio.com/datos.json').subscribe(
       arregloPalabras=>{
-        //console.log(arregloPalabras);
         this.arreglo=Object.values(arregloPalabras);
-        console.log(this.arreglo);
       });
   }
   

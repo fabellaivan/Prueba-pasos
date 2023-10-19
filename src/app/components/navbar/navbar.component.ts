@@ -47,9 +47,11 @@ export class NavbarComponent implements OnDestroy{
   }
   async logOut(){
     this.usrService.logOut().then(() => {
+      console.log('llega');
       this.router.navigate(['/'])
     }).catch(err => {
-      console.log(err);
+      
+     console.log(err);
     });
 
   }

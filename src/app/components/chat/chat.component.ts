@@ -23,7 +23,7 @@ export class ChatComponent implements OnInit {
 
     this.msgService.getMensajes().subscribe((msg) => {
       this.chats = msg;
-      this.scrollTheLastElementByClName();
+     this.scrollTheLastElementByClName();
     });
 
   }
@@ -32,11 +32,16 @@ export class ChatComponent implements OnInit {
     this.msgService.closeMsg();
   }
 
-  sendMsg(): void {
+  sendMsg() {
     if(this.newMsj){
       this.msgService.savMsg(this.userLogeado.uid, this.newMsj);
     }
  
+  }
+  closeOpenChat(trueFalse: boolean){
+    this.viewChat = trueFalse;
+    this.scrollTheLastElementByClName();
+
   }
   scrollTheLastElementByClName() {
 

@@ -23,9 +23,7 @@ export class AhorcadoComponent implements OnInit {
   ngOnInit() {
 
     this.palabra = this.palabraIn
-    let temp = [...this.palabra];  
-    //let text_1 = prompt("Igresa cualquier palabra");
-    
+    let temp = [...this.palabra];      
     for (let i=0; i<this.palabra.length; i++) {   
       temp[i] = '-'
     }    
@@ -47,8 +45,6 @@ export class AhorcadoComponent implements OnInit {
     }
     
     let temp = [...this.mascara];  
-    
-    //let character = 'o'
     let contador = temp.length; 
 
       for (let i=0; i<temp.length; i++) {
@@ -80,7 +76,6 @@ export class AhorcadoComponent implements OnInit {
   
   reiniciarJuego() {
     this.etapaOut.emit(1);
-    //window.location.reload();
   }
 
   lifes() {
@@ -94,9 +89,9 @@ export class AhorcadoComponent implements OnInit {
    this.juegoterminado = true;
    if(this.vidas==0){ 
     this.mascara = this.palabra;
-    this.mensaje = "Perdiste!!. El juego terminó!!" 
+    this.mensaje = "Perdiste!!." 
   } else {
-    this.mensaje = "¡FeLiCiDaDeS! Ganaste!!" 
+    this.mensaje = "Ganaste!!" 
   }
  }
 }
